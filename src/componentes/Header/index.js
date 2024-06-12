@@ -5,7 +5,6 @@ import styled from 'styled-components'
 
 const HeaderContainer = styled.header`
 
-  background-color: #f0ffbf;
   display: flex;
   justify-content: center;
 
