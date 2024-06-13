@@ -16,12 +16,6 @@ const Titulo = styled.h2`
     width: 100%;
 `
 
-const Subtitulo = styled.h3`
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 40px;
-`
-
 const ResultadoContainer = styled.div`
     display: flex;
     justify-content: center;
@@ -38,6 +32,7 @@ const ResultadoPesquisa = styled.div`
     margin: 20px;
     cursor: pointer;
     width: 40%;
+    border-radius: 50px;
 
     p{
         width: 20%;
@@ -53,14 +48,13 @@ const ResultadoPesquisa = styled.div`
 `
 
 const Pesquisa = () => {
-    const [livrosPesquisados, setLivrosPesquisados] = useState([])
-
+    const [livrosPesquisados, setLivrosPesquisados] = useState(livros)
+    
     return (
         <PesquisaContainer>
-            <Titulo>Já sabe por onde começar?</Titulo>
-            <Subtitulo>Encontre seu livro</Subtitulo>
+            <Titulo>Encontre seu livro</Titulo>
             <Input
-                placeholder="proxima leitura"
+                placeholder="Digite sua próxima leitura"
                 onBlur={event => {
                     const textoPesquisa = event.target.value
                     const resultadoPesquisa = livros.filter(livro => livro.nome.includes(textoPesquisa))
@@ -73,7 +67,7 @@ const Pesquisa = () => {
                 livrosPesquisados.map(livro => (
                     <ResultadoPesquisa>
                         <p>{livro.nome}</p>
-                        <img src={livro.src} />
+                        <img src={livro.src} alt='livro'/>
                     </ResultadoPesquisa>
                 ))
             }
