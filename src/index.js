@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Home from './rotas/Home';
 import Favoritos from './rotas/Favoritos';
+import Estante from './rotas/Estante';
 import { createGlobalStyle } from 'styled-components'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './componentes/Header';
@@ -36,6 +37,7 @@ root.render(
       <Routes>
         <Route path='/'           element={<Home/>}/>
         <Route path='/favoritos'  element={<Favoritos/>}/>
+        <Route path='/estante'    element={<Estante/>}/>
       </Routes>
     </BrowserRouter>
     

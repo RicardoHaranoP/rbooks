@@ -19,7 +19,7 @@ const Opcao = styled.li`
     cursor: pointer;
 `
 
-const textoOpcoes = ['CATEGORIAS', 'FAVORITOS', 'ESTANTE']
+const textoOpcoes = [ 'FAVORITOS', 'ESTANTE']
 
 const OpcoesHeader = () => {
     return (

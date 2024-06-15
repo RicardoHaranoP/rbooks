@@ -2,6 +2,7 @@ import Input from '../Input'
 import styled from 'styled-components'
 import { useEffect, useState } from 'react'
 import { getLivros } from '../../servicos/livroServico'
+import { postFavoritos } from '../../servicos/favoritoServico'
 
 const PesquisaContainer = styled.section`
     text-align: center;
@@ -60,6 +61,11 @@ const Pesquisa = () => {
         setLivros(livrosAPI)
     }
 
+    async function insereLivro(id) {
+        await postFavoritos(id)
+        alert(`Livro id ${id} inserido`)
+    }
+
     return (
         <PesquisaContainer>
             <Titulo>Encontre seu livro</Titulo>
@@ -75,7 +81,7 @@ const Pesquisa = () => {
             <ResultadoContainer>
             {
                 livrosPesquisados.map(livro => (
-                    <ResultadoPesquisa>
+                    <ResultadoPesquisa onClick={() => insereLivro(livro.id) }>
                         <p>{livro.nome}</p>
                         <img src={livro.src} alt='livro'/>
                     </ResultadoPesquisa>
