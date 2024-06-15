@@ -9,12 +9,16 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: center;
 
+    a {
+  text-decoration: none;
+  color: inherit;
+  }
 `
 
 const Header = () => {
     return (
         <HeaderContainer>
-            <Link to={'/'}>
+            <Link to={'/'} class='link'>
                 <Logo />
             </Link>
             <OpcoesHeader />
